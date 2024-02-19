@@ -59,7 +59,8 @@ public class NumberArrayList
 	{
 		int largest=0;
 
-		for(int x=0;x<myArray.length;x++) {
+		for(int x=0;x<myArray.length;x++) 
+		{
 		
 			if(myArray[x]>largest)
 			{
