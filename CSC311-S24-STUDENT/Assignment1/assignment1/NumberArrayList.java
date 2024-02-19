@@ -3,7 +3,7 @@ package assignment1;
 
 public class NumberArrayList 
 {
-	private int maxSize
+	private int maxSize;
 	private int size;
 	private int[] myArray;
 	
@@ -24,10 +24,7 @@ public class NumberArrayList
 	
 	public int get(int index)
 	{
-		if(index >= 0 && index < size)
-		{
-			return myArray[index];
-		}
+		return myArray[index];
 	}
 	
 	public int size()
@@ -55,6 +52,7 @@ public class NumberArrayList
 				indices[indicesIndex++] = i;
 			}
 		}
+		return indices;
 	}
 	
 	public int getLargest()
@@ -63,7 +61,10 @@ public class NumberArrayList
 
 		for(int x=0;x<myArray.length;x++) {
 		
-			if(myArray[x]>largest)largest=myArray[x];
+			if(myArray[x]>largest)
+			{
+				largest = myArray[x];
+			}
 		}
 		return largest;
 	}
@@ -72,15 +73,45 @@ public class NumberArrayList
 	{
 		int smallest= getLargest();
 
-		for(int x=0;x<myArray.length;x++) {
+		for(int x=0;x<myArray.length;x++) 
+		{
 		
-			if(myArray[x]<smallest)smallest=myArray[x];
+			if(myArray[x]<smallest)
+			{
+				smallest=myArray[x];
+			}
 		}
 		return smallest;
 	}
 	
 	public int getAverage()
 	{
+		if(size == 0)
+		{
+			return -1;
+		}
 		
+		int average = 0;
+		for(int i=0; i < size; i++)
+		{
+			average += myArray[i];
+		}
+		return average/size;
+	}
+	
+	public String toString() //used to print the ArrayList with ", " between each number
+	{
+		String results = "";
+		
+		for(int i=0; i<size; i++)
+		{
+			results += myArray[i] + ", ";
+			
+		}
+		if(size >0)
+		{
+			results += myArray[size - 1];
+		}
+		return results;
 	}
 }
