@@ -61,7 +61,6 @@ public class NumberArrayList
 
 		for(int x=0;x<myArray.length;x++) 
 		{
-		
 			if(myArray[x]>largest)
 			{
 				largest = myArray[x];
@@ -76,7 +75,6 @@ public class NumberArrayList
 
 		for(int x=0;x<myArray.length;x++) 
 		{
-		
 			if(myArray[x]<smallest)
 			{
 				smallest=myArray[x];
