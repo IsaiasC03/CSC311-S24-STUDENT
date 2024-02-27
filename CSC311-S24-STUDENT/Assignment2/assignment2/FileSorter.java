@@ -19,9 +19,12 @@ public class FileSorter
 	        // Read numbers from the input file
 	        NumberFileReader reader = new NumberFileReader(inputFile);
 	        int[] numbers;
-	        try {
+	        try 
+	        {
 	            numbers = reader.read();
-	        } catch (IOException e) {
+	        } 
+	        catch (IOException e) 
+	        {
 	            System.err.println("Error reading input file: " + e.getMessage());
 	            return;
 	        }
@@ -32,10 +35,13 @@ public class FileSorter
 
 	        // Write the sorted numbers to the output file
 	        NumberFileWriter writer = new NumberFileWriter(outputFile);
-	        try {
+	        try 
+	        {
 	            writer.write(sortedNumbers);
 	            System.out.println("Sorted numbers have been written to " + outputFile);
-	        } catch (IOException e) {
+	        } 
+	        catch (IOException e) 
+	        {
 	            System.err.println("Error writing to output file: " + e.getMessage());
 	        }
 	    }
