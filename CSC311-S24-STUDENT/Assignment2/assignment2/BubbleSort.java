@@ -1,7 +1,6 @@
 package assignment2;
 //Isaias Chavarin Velasquez (ichavarinvelasquez1@toromail.csudh.edu)
 
-
 public class BubbleSort 
 {
 	private int[] array;
@@ -21,23 +20,25 @@ public class BubbleSort
         bubbleSort(true);
         return array;
     }
-
+	
     public int[] sortDesc() 
     {
         bubbleSort(false);
         return array;
     }
-
+    
     public int loopCycles() 
     {
         return loopCycles;
     }
-
+    
     private void bubbleSort(boolean ascending) 
     {
         loopCycles = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
+        for (int i = 0; i < array.length - 1; i++) 
+        {
+            for (int j = 0; j < array.length - i - 1; j++) 
+            {
                 if (ascending ? array[j] > array[j + 1] : array[j] < array[j + 1]) 
                 {
                     int temp = array[j];
@@ -48,50 +49,5 @@ public class BubbleSort
             }
         }
     }
-	/*
-	public void sortAsc(int[] array)
-	{
-		
-		boolean swapped = false;
-		int loopcycle =0;
-		do
-		{
-			for(int x = 0; x< array.length-1; x++)
-			{
-				if(array[x]>array[x+1])
-				{
-					swap(array,x,x+1);
-				}
-			}
-			loopcycle++;
-		}
-		while(swapped);
-	}
-	
-	public void sortDes(int[] array)
-	{
-		
-		boolean swapped = false;
-		int loopcycle =0;
-		do
-		{
-			for(int x = 0; x< array.length-1; x++)
-			{
-				if(array[x]<array[x+1])
-				{
-					swap(array,x,x+1);
-				}
-			}
-			loopcycle++;
-		}
-		while(swapped);
-	}
-	
-	private void swap(int[] array, int a, int b)
-	{
-		int tmp = array[a];
-		array[a]=array[b];
-		array[b] = tmp;
-	}
-*/
+    //using a bubbleSort method to be able to sort ascending and descending without taking a array as a argument
 }

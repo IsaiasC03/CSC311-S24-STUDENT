@@ -16,14 +16,17 @@ public class NumberFileReader
 	public int[] read() throws IOException
 	{
 		int count=0;
-		int[] numbersArray = new int[count];
 		try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
 		{
 			while(reader.readLine() != null)
 			{
 				count++;
 			}
-					;
+		}
+		
+		int[] numbersArray = new int[count];
+		try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
+		{
 			String line;
 			int index = 0;
 			while((line =  reader.readLine()) != null)
@@ -36,6 +39,5 @@ public class NumberFileReader
 		return numbersArray;
 	}
 		
-	
 
 }

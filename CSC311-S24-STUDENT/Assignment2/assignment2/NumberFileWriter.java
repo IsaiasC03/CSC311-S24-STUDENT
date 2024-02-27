@@ -23,7 +23,9 @@ public class NumberFileWriter
                 writer.write(String.valueOf(number));
                 writer.newLine();
             }
+            writer.close();
 		}
+
 	}
 
 }

@@ -7,16 +7,17 @@ public class FileSorter
 {
 	 public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
-
-	        // Prompt the user to enter the input file name
+	        int pickingOrder;
+	        
 	        System.out.print("Enter the name of the input file: ");
 	        String inputFile = scanner.nextLine();
-
-	        // Prompt the user to enter the output file name
+	        
 	        System.out.print("Enter the name of the output file: ");
 	        String outputFile = scanner.nextLine();
-
-	        // Read numbers from the input file
+	        
+	        System.out.println("Type 1 for acsending order. Type 2 for decsending order");
+	        pickingOrder = scanner.nextInt();
+	        
 	        NumberFileReader reader = new NumberFileReader(inputFile);
 	        int[] numbers;
 	        try 
@@ -28,17 +29,25 @@ public class FileSorter
 	            System.err.println("Error reading input file: " + e.getMessage());
 	            return;
 	        }
-
-	        // Sort the numbers using Bubble Sort
+	        
 	        BubbleSort sorter = new BubbleSort(numbers);
-	        int[] sortedNumbers = sorter.sortAsc();
-
-	        // Write the sorted numbers to the output file
+	        int[] sortedNumbersAsc = sorter.sortAsc();
+	        
+	        int[] sortedNumbersDesc = sorter.sortDesc();
+	        
 	        NumberFileWriter writer = new NumberFileWriter(outputFile);
 	        try 
 	        {
-	            writer.write(sortedNumbers);
-	            System.out.println("Sorted numbers have been written to " + outputFile);
+	        	if(pickingOrder == 1)
+	        	{
+	        		writer.write(sortedNumbersAsc);
+	        		System.out.println("Numbers have been sorted in Acsending order in " + outputFile);
+	        	}
+	        	if(pickingOrder == 2)
+	        	{
+	        		writer.write(sortedNumbersAsc);
+	        		System.out.println("Numbers have been sorted in Decsending order in  " + outputFile);
+	        	}
 	        } 
 	        catch (IOException e) 
 	        {
